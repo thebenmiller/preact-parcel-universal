@@ -1,0 +1,1 @@
+{"dependencies":[{"name":"/Users/bmiller/WORK/Lib/preact-parcel-ssr/package.json","includedInParent":true,"mtime":1519426106224}],"generated":{"js":"\"use strict\";Object.defineProperty(exports,\"__esModule\",{value:!0});var e=function(){return h(\"h1\",null,\"Home Page!\")};exports.default=e;"},"hash":"7a2d92f2edfaffd32ec4004513e510c3","cacheData":{"env":{}}}

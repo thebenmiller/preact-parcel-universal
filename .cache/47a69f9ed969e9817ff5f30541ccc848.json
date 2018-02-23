@@ -1,0 +1,1 @@
+{"dependencies":[{"name":"./index.jsx","dynamic":true}],"generated":{"html":"<!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <title>Preact Boilerplate</title> </head> <body> <div id=\"root\"></div> <script src=\"/dist/819cc43cca50e86df5b6d5dd1b1849d4.js\"></script> </body> </html> "},"hash":"1944bbd242904403cbfc7f1ee28306a1","cacheData":{}}
