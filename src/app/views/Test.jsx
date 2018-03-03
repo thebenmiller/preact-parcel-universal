@@ -1,3 +1,5 @@
+import { h } from 'preact';
+
 const Test = () => (
   <div>
     <h1>Test Page!</h1>

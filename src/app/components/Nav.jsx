@@ -1,3 +1,4 @@
+import { h } from 'preact';
 import { NavLink } from 'react-router-dom';
 
 const Nav = () => (
