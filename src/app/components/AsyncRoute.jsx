@@ -1,10 +1,11 @@
 import { h, Component } from 'preact';
 import { Route } from 'react-router-dom';
 
-const AsyncRoute = props => {
+const AsyncRoute = (props) => {
   const { path, module } = props;
-  const component = <AsyncComponent module={props.module} />;
-  return <Route path={path} component={() => component} />;
+  const isServer = !(typeof window !== 'undefined' && window.document);
+  const ImportedComponent = () => (isServer ? module.default : <AsyncComponent module={module} />);
+  return <Route exact={props.exact} path={path} component={ImportedComponent} />;
 };
 
 class AsyncComponent extends Component {
@@ -14,13 +15,14 @@ class AsyncComponent extends Component {
   }
   componentWillMount() {
     if (this.state.module && !this.state.component) {
-      Promise.resolve(import(this.state.module)).then(component => {
-        return this.setState({ component });
-      });
+      this.state.module.then(component => this.setState({ component: component.default }));
     }
   }
   render() {
-    if (this.state.component) return this.state.component.default();
+    const MyComponent = this.state.component;
+    if (MyComponent) {
+      return <MyComponent {...this.props} />;
+    }
   }
 }
 

@@ -10,8 +10,7 @@
             }
           }
         ]
-      ],
-      "plugins": ["dynamic-import-node"]
+      ]
     },
     "server": {
       "presets": [
@@ -23,8 +22,7 @@
             }
           }
         ]
-      ],
-      "plugins": ["dynamic-import-node-sync"]
+      ]
     }
   },
   "presets": ["preact"],
