@@ -1,3 +1,45 @@
 {
-  "presets": ["env", "preact"]
+  "env": {
+    "client": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "browsers": ["last 2 versions", "ie 10"]
+            }
+          }
+        ]
+      ],
+      "plugins": ["dynamic-import-node"]
+    },
+    "server": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "node": "8"
+            }
+          }
+        ]
+      ],
+      "plugins": ["dynamic-import-node-sync"]
+    }
+  },
+  "presets": ["preact"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["."],
+        "alias": {
+          "views": "./src/app/views",
+          "components": "./src/app/components",
+          "css": "./src/app/css"
+        }
+      }
+    ],
+    "syntax-dynamic-import"
+  ]
 }
