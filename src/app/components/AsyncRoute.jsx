@@ -1,5 +1,8 @@
 import { h, Component } from 'preact';
 import { Route } from 'react-router-dom';
+import { Transition } from 'react-transition-group';
+
+import Loader from 'components/Loader';
 
 const AsyncRoute = (props) => {
   const { path, module } = props;
@@ -20,9 +23,8 @@ class AsyncComponent extends Component {
   }
   render() {
     const MyComponent = this.state.component;
-    if (MyComponent) {
-      return <MyComponent {...this.props} />;
-    }
+    if (MyComponent) return <MyComponent {...this.props} />;
+    return <Loader />;
   }
 }
 
